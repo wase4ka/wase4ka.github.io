@@ -29,16 +29,18 @@ function resize() {
 }
 
 function draw() {
-  ctx.fillStyle = "green";
+  ctx.fillStyle = "#aaa";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   
-  ctx.fillStyle = "red";
+  ctx.fillStyle = "#333";
   ctx.fillRect(10, 10, canvas.width-20, canvas.height-20);
   
+  ctx.strokeStyle = "#f00";
   ctx.moveTo(20, 20);
   ctx.lineTo(30, 30);
   ctx.stroke();
   
+  ctx.strokeStyle = "#0f0";
   ctx.beginPath();
   ctx.arc(45, 25, 5, 0, 2 * Math.PI);
   ctx.stroke();
