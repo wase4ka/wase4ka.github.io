@@ -6,6 +6,7 @@
     }
   </style>
 </head>
+
 <body>
   <canvas id="canvas"></canvas>
 </body>
@@ -15,6 +16,10 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-ctx.fillStyle = "green";
-ctx.fillRect(0, 0, canvas.width, canvas.height);
+draw();
+
+function draw() {
+  ctx.fillStyle = "green";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
 </script>
