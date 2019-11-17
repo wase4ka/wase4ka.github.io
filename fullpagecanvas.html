@@ -14,11 +14,34 @@
 <script>
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
+var coords = {x:500,y:200};
+
 window.onresize = function(event) {
   resize();
   draw();
 };
   
+  
+  
+    
+
+var oldX = window.screenX,
+    oldY = window.screenY;
+
+var interval = setInterval(function(){
+  if(oldX != window.screenX || oldY != window.screenY){
+    //console.log('moved!');
+		coords.x -= window.screenX - oldX;
+		coords.y -= window.screenY - oldY;
+		draw();
+		oldX = window.screenX;
+		oldY = window.screenY;
+		
+  } else {
+    //console.log('not moved!');
+  }
+
+}, 500);
   
 resize();
 draw();
@@ -45,6 +68,11 @@ function draw() {
   ctx.strokeStyle = "#0f0";
   ctx.beginPath();
   ctx.arc(120, 50, 30, 0, 2 * Math.PI);
+  ctx.stroke();
+  
+  ctx.beginPath();
+  ctx.strokeStyle = "#00f";
+  ctx.arc(coords.x, coords.y, 5, 0, 2 * Math.PI);
   ctx.stroke();
 }
 </script>
