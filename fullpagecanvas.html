@@ -29,20 +29,22 @@ function resize() {
 }
 
 function draw() {
-  ctx.fillStyle = "#aaa";
+  ctx.fillStyle = "#555";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   
   ctx.fillStyle = "#333";
   ctx.fillRect(10, 10, canvas.width-20, canvas.height-20);
   
+  ctx.lineWidth = 3;
   ctx.strokeStyle = "#f00";
   ctx.moveTo(20, 20);
-  ctx.lineTo(30, 30);
+  ctx.lineTo(80, 80);
   ctx.stroke();
   
+  ctx.beginPath();
   ctx.strokeStyle = "#0f0";
   ctx.beginPath();
-  ctx.arc(45, 25, 5, 0, 2 * Math.PI);
+  ctx.arc(120, 50, 30, 0, 2 * Math.PI);
   ctx.stroke();
 }
 </script>
