@@ -52,12 +52,16 @@ function resize() {
 }
 
 function draw() {
+	
+	ctx.beginPath();
   ctx.fillStyle = "#555";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   
   ctx.fillStyle = "#333";
   ctx.fillRect(10, 10, canvas.width-20, canvas.height-20);
-  
+ 
+
+	ctx.beginPath();
   ctx.lineWidth = 3;
   ctx.strokeStyle = "#f00";
   ctx.moveTo(20, 20);
